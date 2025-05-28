@@ -48,7 +48,7 @@ function listar(){
     let ndoc = document.getElementById("numdoc").value;
     //usuarios?id=user124
          //https://proyectofinaldsws.netlify.app/.netlify/functions/usuarios
-    fetch("https://desarrollosf.netlify.app/.netlify/functions/usuarios?iden="+ndoc, requestOptions)
+    fetch("https://desarrollosf.netlify.app/.netlify/functions/usuarios/usuarios?iden="+ndoc, requestOptions)
       .then((response) =>
         response.text())
       .then((result) =>
