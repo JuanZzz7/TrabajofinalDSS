@@ -25,12 +25,12 @@ class UsuariosController{
     async ingresar(req,res){
         try{
             const admin = require('./firebaseAdmin');
-            /*
+            
             const {dni,nombre,apellidos,email} = req.body;
             console.log ("Documento de identidad:... " + dni);
             console.log ("Nombres con apellidos:" + nombre + " " + apellidos);
             console.log ("email: "+ email);
-            */
+            
            /*let raw = JSON.stringify({
             "dni": document.getElementById("dni").value,
             "nombre": document.getElementById("nombre").value,
