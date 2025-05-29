@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const usuariosmodel = require("../../backend/modelo/usuariosmodelo.js");
-const app = express();
 
 router.get("/",usuariosmodel.consultarDetalle);
 router.post("/",usuariosmodel.ingresar);
