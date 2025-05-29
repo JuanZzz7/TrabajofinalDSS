@@ -8,11 +8,20 @@ function guardar(){
     event.preventDefault();
 
     let raw = JSON.stringify({
+      "dni": "12134",
+      "nombre": "Juan",
+      "apellidos": "bustos",
+      "email": "elmondongo@gmail.com"
+    });
+
+    /*
+      let raw = JSON.stringify({
       "dni": document.getElementById("dni").value,
       "nombre": document.getElementById("nombre").value,
       "apellidos": document.getElementById("apellidos").value,
       "email": document.getElementById("correo").value
     });
+    */
 
     let requestOptions = {
       method: "POST",
