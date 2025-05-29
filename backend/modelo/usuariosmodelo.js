@@ -25,14 +25,21 @@ class UsuariosController{
     async ingresar(req,res){
         try{
             const admin = require('./firebaseAdmin');
-            
+            /*
             const {dni,nombre,apellidos,email} = req.body;
             console.log ("Documento de identidad:... " + dni);
             console.log ("Nombres con apellidos:" + nombre + " " + apellidos);
             console.log ("email: "+ email);
-            
+            */
+           /*let raw = JSON.stringify({
+            "dni": document.getElementById("dni").value,
+            "nombre": document.getElementById("nombre").value,
+            "apellidos": document.getElementById("apellidos").value,
+            "email": document.getElementById("correo").value
+            });*/
+
             //Asignando nombre del documento
-            //const docRef = await admin.firestore().collection('users').doc("user654").set(req.body);
+            const docRef = await admin.firestore().collection('users').doc("user654").set(req.body);
             //Adicionando con nombre de documento asignado dinámicamente
             //const docRef = await admin.firestore().collection('users').add(req.body);
             res.status(200).send ("Usuario agregado");
