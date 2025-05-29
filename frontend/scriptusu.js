@@ -1,5 +1,7 @@
 function guardar(){
-let apellidos='';
+function guardar(){
+
+    let apellidos='';
     let datoingresado = document.getElementById("correo").value;
 
     const myHeaders = new Headers();
@@ -20,7 +22,7 @@ let apellidos='';
       redirect: "follow"
     };
 
-    fetch("https://desarrollosf.netlify.app/.netlify/functions/usuarios/usuarios", requestOptions)
+    fetch("https://proyectofinaldsws.netlify.app/.netlify/functions/usuarios", requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.error(error));
