@@ -1,5 +1,4 @@
 function guardar(){
-function guardar(){
 
     let apellidos='';
     let datoingresado = document.getElementById("correo").value;
