@@ -36,7 +36,7 @@ class UsuariosController{
             Object.keys(userData).forEach(key => userData[key] === undefined && delete userData[key]);
 
             // Guardar en Firestore
-            await admin.firestore().collection('users').add();
+            await admin.firestore().collection('users').add(userData);
             
            /*let raw = JSON.stringify({
             "dni": document.getElementById("dni").value,
