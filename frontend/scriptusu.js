@@ -1,4 +1,4 @@
-function guardar(){
+function guardar(event){
 event.preventDefault();
 
   const archivo = document.getElementById("archivo").files[0];
