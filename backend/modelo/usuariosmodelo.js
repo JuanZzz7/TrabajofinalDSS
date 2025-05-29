@@ -30,6 +30,13 @@ class UsuariosController{
             console.log ("Documento de identidad:... " + dni);
             console.log ("Nombres con apellidos:" + nombre + " " + apellidos);
             console.log ("email: "+ email);
+
+            await admin.firestore().collection('users').add({
+            dni,
+            nombre,
+            apellidos,
+            email
+            });
             
            /*let raw = JSON.stringify({
             "dni": document.getElementById("dni").value,
