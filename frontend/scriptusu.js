@@ -1,52 +1,29 @@
-function guardar(event){
-event.preventDefault();
+function guardar(){
+let apellidos='';
+    let datoingresado = document.getElementById("correo").value;
 
-  const archivo = document.getElementById("archivo").files[0];
-  const dni = document.getElementById("dni").value;
-  const nombre = document.getElementById("nombre").value;
-  const apellidos = document.getElementById("apellidos").value;
-  const email = document.getElementById("correo").value;
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    event.preventDefault();
 
-  if (!archivo) {
-    alert("Por favor selecciona un archivo.");
-    return;
-  }
-
-  // Ruta en Firebase Storage
-  const storageRef = storage.ref(`usuarios/${dni}/${archivo.name}`);
-
-  // Subir archivo
-  storageRef.put(archivo).then((snapshot) => {
-    snapshot.ref.getDownloadURL().then((url) => {
-      console.log("Archivo subido. URL:", url);
-
-      // Ahora puedes guardar los datos junto con la URL del archivo
-      const myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
-
-      let raw = JSON.stringify({
-        dni: dni,
-        nombre: nombre,
-        apellidos: apellidos,
-        email: email,
-        archivoURL: url
-      });
-
-      let requestOptions = {
-        method: "POST",
-        headers: myHeaders,
-        body: raw,
-        redirect: "follow"
-      };
-
-      fetch("https://desarrollosf.netlify.app/.netlify/functions/usuarios/usuarios", requestOptions)
-        .then((response) => response.text())
-        .then((result) => console.log("Datos guardados:", result))
-        .catch((error) => console.error("Error al guardar datos:", error));
+    let raw = JSON.stringify({
+      "dni": document.getElementById("dni").value,
+      "nombre": document.getElementById("nombre").value,
+      "apellidos": document.getElementById("apellidos").value,
+      "email": document.getElementById("correo").value
     });
-  }).catch((error) => {
-    console.error("Error al subir archivo:", error);
-  });
+
+    let requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow"
+    };
+
+    fetch("https://desarrollosf.netlify.app/.netlify/functions/usuarios/usuarios", requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.error(error));
 }
 
 function cargar(resultado){
