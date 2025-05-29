@@ -39,7 +39,7 @@ class UsuariosController{
             });*/
 
             //Asignando nombre del documento
-            const docRef = await admin.firestore().collection('users').doc("user654").set(req.body);
+            //const docRef = await admin.firestore().collection('users').doc("user654").set(req.body);
             //Adicionando con nombre de documento asignado dinámicamente
             //const docRef = await admin.firestore().collection('users').add(req.body);
             res.status(200).send ("Usuario agregado");
