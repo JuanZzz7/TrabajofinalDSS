@@ -30,11 +30,11 @@ class UsuariosController{
             console.log ("Documento de identidad:... " + dni);
             console.log ("Nombres con apellidos:" + nombre + " " + apellidos);
             console.log ("email: "+ email);
-            /*
+            
             // Eliminar campos undefined
             let userData = { dni, nombre, apellidos, email };
             Object.keys(userData).forEach(key => userData[key] === undefined && delete userData[key]);
-            */
+            
             // Guardar en Firestore
             await admin.firestore().collection('users').add(userData);
             
