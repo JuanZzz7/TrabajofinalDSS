@@ -24,7 +24,7 @@ function guardar(){
     fetch("https://desarrollosf.netlify.app/.netlify/functions/usuarios", requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
-      .catch((error) => console.error(error));
+      .catch((error) => console.error("no se ha podido cargar",error));
 }
 
 function cargar(resultado){
