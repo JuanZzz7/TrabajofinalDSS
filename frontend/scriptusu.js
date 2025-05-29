@@ -20,8 +20,8 @@ function guardar(){
       body: raw,
       redirect: "follow"
     };
-
-    fetch("https://desarrollosf.netlify.app/.netlify/functions/usuarios/usuarios", requestOptions)
+    //https://desarrollosf.netlify.app/.netlify/functions/usuarios
+    fetch("https://desarrollosf.netlify.app/.netlify/functions/usuarios", requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.error(error));
