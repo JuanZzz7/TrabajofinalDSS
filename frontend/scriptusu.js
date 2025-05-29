@@ -39,7 +39,7 @@ function cargar(resultado){
     document.getElementById("rta").innerHTML = salida;
 }
 
-function listar(event){
+function listar(){
     event.preventDefault();
     const requestOptions = {
       method: "GET",
