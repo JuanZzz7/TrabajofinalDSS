@@ -1,5 +1,3 @@
-
-/*
 const admin = require('firebase-admin');
 
 if (!admin.apps.length) {
@@ -14,7 +12,8 @@ if (!admin.apps.length) {
 
 module.exports = admin;
 
-*/
+
+/*
 const admin = require('firebase-admin');
 
 // Verificar que las variables de entorno estén configuradas
@@ -45,3 +44,5 @@ if (!admin.apps.length) {
 }
 
 module.exports = admin;
+
+*/
