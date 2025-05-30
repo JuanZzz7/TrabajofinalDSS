@@ -33,7 +33,7 @@ function guardar(){
     fetch("https://desarrollosf.netlify.app/.netlify/functions/usuarios", requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
-      .catch((error) => console.error("no se ha podido cargar",error));
+      .catch((error) => console.error(error));
 }
 
 function cargar(resultado){
