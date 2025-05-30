@@ -36,6 +36,7 @@ function guardar() {
     console.log("Enviando petición...");
     
     // URL corregida - agregar la ruta /usuarios al final
+    //https://desarrollosf.netlify.app/.netlify/functions/usuarios
     fetch("https://desarrollosf.netlify.app/.netlify/functions/usuarios", requestOptions)
         .then((response) => {
             if (!response.ok) {
@@ -73,7 +74,8 @@ function listar() {
     };
     
     // URL corregida con query parameter
-    fetch(`https://desarrollosf.netlify.app/.netlify/functions/usuarios?iden=${ndoc}`, requestOptions)
+    //https://desarrollosf.netlify.app/.netlify/functions/usuarios/usuarios?iden=
+    fetch(`https://desarrollosf.netlify.app/.netlify/functions/usuarios/usuarios?iden=${ndoc}`, requestOptions)
         .then((response) => {
             if (!response.ok) {
                 if (response.status === 404) {
