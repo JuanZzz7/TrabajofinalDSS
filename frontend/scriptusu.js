@@ -36,7 +36,7 @@ function guardar() {
     console.log("Enviando petición...");
     
     // URL corregida - agregar la ruta /usuarios al final
-    fetch("https://ejemplodss.netlify.app/.netlify/functions/usuarios", requestOptions)
+    fetch("https://pruebafinal7.netlify.app/.netlify/functions/usuarios", requestOptions)
         .then((response) => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -73,7 +73,7 @@ function listar() {
     };
     
     // URL corregida con query parameter
-    fetch(`https://ejemplodss.netlify.app/.netlify/functions/usuarios?iden=${ndoc}`, requestOptions)
+    fetch(`https://pruebafinal7.netlify.app/.netlify/functions/usuarios?iden=${ndoc}`, requestOptions)
         .then((response) => {
             if (!response.ok) {
                 if (response.status === 404) {
